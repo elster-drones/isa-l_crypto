@@ -1,0 +1,48 @@
+Source: libisal-crypto
+Priority: optional
+Maintainer: daos-stack <daos@daos.groups.io>
+Build-Depends:
+ debhelper,
+ nasm
+Standards-Version: 4.3.0
+Section: libs
+Homepage: https://github.com/intel/isa-l_crypto
+Vcs-Git: https://github.com/intel/isa-l_crypto.git
+Vcs-Browser: https://github.com/intel/isa-l_crypto
+
+Package: libisal-crypto-dev
+Section: libdevel
+Architecture: amd64 kfreebsd-amd64
+Depends:
+ libisal2-crypto (= ${binary:Version}),
+ ${misc:Depends},
+Description: Intel(R) Intelligent Storage Acceleration Library Crypto - devel files
+ Collection of optimized low-level functions targeting storage applications.
+ .
+ This package contains the development files needed to build against the shared
+ library.
+
+Package: libisal2-crypto
+Architecture: amd64 kfreebsd-amd64
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Intel(R) Intelligent Storage Acceleration Library Crypto - shared library
+ Collection of optimized low-level functions targeting storage applications. 
+ ISA-L_crypto includes:
+ .
+   Multi-buffer hashes - run multiple hash jobs together on one core for
+                         much better throughput than single-buffer versions.
+    SHA1, SHA256, SHA512, MD5
+ .
+   Multi-hash - Get the performance of multi-buffer hashing with a
+                single-buffer interface.
+ .
+   Multi-hash + murmur - run both together.
+ .
+   AES - block ciphers
+     XTS, GCM, CBC
+ .
+   Rolling hash - Hash input in a window which moves through the input
+ .
+ This package contains the shared library.
