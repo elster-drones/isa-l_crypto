@@ -1,0 +1,7 @@
+# This line is mandatory to access the configuration functions
+from Config import *
+
+addFilter('libisa(-l|l2)\.x86_64: W: obsolete-not-provided isa-l')
+
+addFilter('libisa(-l_crypto|l_crypto2)\.x86_64: W: obsolete-not-provided isa-l_crypto')
+
